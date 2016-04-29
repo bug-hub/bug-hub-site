@@ -1,6 +1,5 @@
 "use strict";
 
-setTimeout(function(){ $('pre').unwrap(); }, 800);
 setTimeout(function(){$('code').wrap("<pre></pre>") }, 500);
 var Page = React.createClass({
   displayName: "Page",
