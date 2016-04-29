@@ -118,7 +118,7 @@ var Page = React.createClass({
       }
       return (
       <div className="container">
-         <h2>Welcome to the Stack App</h2>
+         <h2>Welcome to Bug Hub</h2>
          <MenuBox
             searchFilter={this.searchFilter}
             categoryFilter={this.categoryFilter}
