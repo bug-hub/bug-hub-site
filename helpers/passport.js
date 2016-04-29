@@ -1,5 +1,4 @@
 'use strict'
-const passportLocal = require("passport-local");
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 const knex = require("../db/knex");
 const passwordHelpers = require("./passwordHelpers");
