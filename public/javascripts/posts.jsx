@@ -30,14 +30,14 @@ var Page = React.createClass({
     }).bind(this));
   },
   componentDidMount: function componentDidMount(){
-    var simplemde = new SimpleMDE({
+    setTimeout(function(){var simplemde = new SimpleMDE({
       element: document.getElementById("body"),
       renderingConfig: {
         singleLineBreaks: false,
         codeSyntaxHighlighting: true,
         indentWithTabs: true,
       }
-    });
+    });},500)
   },
   handleSubmit: function handleSubmit(e){
     e.preventDefault();
@@ -63,7 +63,7 @@ var Page = React.createClass({
           </div>
         )
     }.bind(this));
-if(this.state.user_id === this.state.post_author){
+if(this.state.user.id === this.state.post_author.id){
     return (
       <div className="container">
         <h2 className="lead"> Title: {this.state.post.title}</h2>
