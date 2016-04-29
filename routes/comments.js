@@ -8,7 +8,7 @@ router.get('/', (req,res) => {
   knex('comments').where({post_id: req.params.post_id}).then((comments) =>{
     knex('posts').where({id: req.params.post_id}).first().then((post) => {
       comments.forEach(function(val) {
-        val.content = markdown.toHTML(val.content) 
+        val.content = markdown.toHTML(val.content)
       });
       res.render("comments/index", {comments,post})
     })
@@ -39,7 +39,7 @@ router.get('/:id/edit', (req,res) => {
       knex('posts').where({id: comment.post_id}).first().then((post) => {
         if(comment.user_id === req.user.id){
             res.render("comments/edit", {comment,post})
-             
+
       }else{
         res.redirect('/posts/' + req.params.post_id )
       }
@@ -58,7 +58,7 @@ router.post('/', (req,res) => {
       .where('posts.id', post_id)
       .first()
       .then(user => {
-      res.redirect(`/users/${user.user_id}/posts/${post_id}`);  
+      res.redirect(`/users/${user.user_id}/posts/${post_id}`);
     })
   });
 });
@@ -80,7 +80,12 @@ router.patch('/:id', (req,res) => {
 
 router.delete('/:id',authHelpers.ensureCorrectUserForEditComments, (req,res) => {
   knex('comments').where({id:req.params.id}).returning("*").first().del().then((post) =>{
-    res.redirect(`/posts/${req.params.post_id}`)
+    knex('posts')
+    .select('posts.id as pid', 'users.id as uid')
+    .join('users', 'posts.user_id', 'users.id')
+    .where('posts.id', req.params.post_id).first().then( (post)=> {
+    res.redirect('/users/'+  post.uid + '/posts/' + post.pid)
+    })
   }).catch((err) =>{
     res.render("error", {err})
   });
