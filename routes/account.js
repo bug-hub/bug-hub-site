@@ -6,7 +6,6 @@ const knex = require('../db/knex');
 const bcrypt = require('bcrypt');
 const authHelpers = require('../helpers/authHelpers');
 const passwordHelpers = require('../helpers/passwordHelpers');
-const LocalStrategy = require('passport-local').Strategy;
 const router = express.Router();
 const SALT_WORK_FACTOR = 10;
 
