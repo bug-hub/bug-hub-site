@@ -37,7 +37,15 @@ var Page = React.createClass({
         codeSyntaxHighlighting: true,
         indentWithTabs: true,
       }
-    });},500)
+    });
+    var simplemde = new SimpleMDE({
+      element: document.getElementById("preview"),
+      renderingConfig: {
+        singleLineBreaks: false,
+        codeSyntaxHighlighting: true,
+      }
+    });
+    },500)
   },
   handleSubmit: function handleSubmit(e){
     e.preventDefault();
