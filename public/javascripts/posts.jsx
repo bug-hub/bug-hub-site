@@ -63,7 +63,7 @@ var Page = React.createClass({
           </div>
         )
     }.bind(this));
-if(this.state.user_id === this.state.current_user){
+if(this.state.user_id === this.state.post_author){
     return (
       <div className="container">
         <h2 className="lead"> Title: {this.state.post.title}</h2>
