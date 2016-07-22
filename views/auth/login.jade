@@ -1,74 +1,48 @@
 extends ../layout
 
 block content
-  #cover
-    img(class="coverPhoto" src='/images/bug_photo.jpg')
-  .col-md-6.col-md-offset-3.loginSignUpDiv
+  #navbar
+    ul
+      li
+        a(href="/auth/google") Login with Google
+  #loginContent
     div
-      h2.text-center About This App
-      p(class="content") As programmers, we often need to debug our code.  Often time, we need to debug code that other people have already solved.  Instead of reinventing the wheel, we want to create a platform where tech students are able to log their bugs and share with others.
-      p(class="content") We developed this application in light of a need for tech students to have easy access to a comprehensive bug list.
-      p(class="content") We hope other students will use our error tracking app to help themselves as well as help others in their journey to debugging.
-    h3(class="headline") Login / Sign Up with Google:
-    div
+      h1 BUG-HUB
+      h3 A platform for developers to help other developers
       a(href="/auth/google")
-        i(class="fa fa-google fa-3x google" aria-hidden="true") &nbsp; Google
-    div#button
       i(class="fa fa-angle-double-down fa-3x" aria-hidden="true")
-  .container-fluid#secondCover
-    .row
-      h3(class="headline") Meet Our Team Members
-    .row
-      .col-sm-6.col-md-3
-        a(href="https://github.com/chrischang43")
-          img(class="headshot" src='/images/chris.jpg')
-          p(class="lead headline") Chris Chang
-      .col-sm-6.col-md-3
-        a(href="https://github.com/krpeacock")
-          img(class="headshot" src='/images/kyle.png')
-          p(class="lead headline") Kyle Peacock
-      .col-sm-6.col-md-3
-        a(href="https://github.com/massiv64")
-          img(class="headshot" src='/images/nic.jpg')
-          p(class="lead headline") Nic Higuera
-      .col-sm-6.col-md-3
-        a(href="https://github.com/sarabpj")
-          img(class="headshot" src='/images/sara.jpeg')
-          p(class="lead headline") Sara Jay
-  .container-fluid#thirdCover
-    .row
-      h3(class="headline") Technologies That We Used
-    .row
-      .col-sm-4.col-md-2
-        a(href="https://nodejs.org/")
-          img(class="logo" src='/images/nodejs.svg')
-          p(class="lead headline") NodeJS
-      .col-sm-4.col-md-2
-        a(href="http://passportjs.org")
-          img(class="logo" src='/images/passport.png')
-          p(class="lead headline") PassportJS
-      .col-sm-4.col-md-2
-        a(href="http://knexjs.org/")
-          img(class="logo" src='/images/knex.png')
-          p(class="lead headline") KnexJS
-      .col-sm-4.col-md-2
-        a(href="http://www.postgresql.org/")
-          img(class="logo" src='/images/postgresql.png')
-          p(class="lead headline") Postgresql
-      .col-sm-4.col-md-2
-        a(href="https://facebook.github.io/react/")
-          img(class="logo" src='/images/react.png')
-          p(class="lead headline") ReactJS
-      .col-sm-4.col-md-2
-        a(href="http://jade-lang.com/")
-          img(class="logo" src='/images/jade.png')
-          p(class="lead headline") Jade
-  .container-fluid#fourthCover
-    .row
-      h3(class="headline") Open Source Project
-      p(class="lead headline") If you would like to contribute, please checkout our code here!
-      .col-md-6.col-md-offset-3
-        a(href="https://github.com/bug-hub/bug-hub-site.git")
-          img(class="github" src='/images/github.svg')
-          p(class="lead text-center") GitHub - Bug Hub
-  script(src="/javascripts/landingPage.js")
+  #team-member
+    .grid
+      h2 Team Members
+      .item
+        h4 Chris Chang
+        img(src="../images/chris.jpg")
+      .item
+        h4 Kyle Peacock
+        img(src="../images/kyle.png")
+      .item
+        h4 Sara Jay
+        img(src="../images/sara.jpeg")
+      .item
+        h4 Nic Higuera
+        img(src="../images/nic.jpg")
+  #technology
+    .tech
+      h2 Technologies
+      .item
+        img(src="../images/jade.png")
+      .item
+        img(src="../images/javascript.png")
+      .item
+        img(src="../images/knex.png")
+      .item
+        img(src="../images/passport.png")
+      .item
+        img(src="../images/postgresql.png")
+      .item
+        img(src="../images/react.png")
+  #open-source
+    h2 OS project
+    a(href="https://github.com/bug-hub/bug-hub-site") 
+      img(src="../images/github.svg")
+    h2 Find us on Git-Hub!
