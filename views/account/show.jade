@@ -1,7 +1,7 @@
 extends ../layout.jade
 
 block content
-  .col-sm-6.col-sm-offset-2.profileDiv
+  .container-fluid#account-page
     h1=user.alias
     if (!user.photo)
       img.profilePhoto(src="http://memesvault.com/wp-content/uploads/Derp-Face-Meme-Smiley-191.jpg") 
@@ -10,7 +10,7 @@ block content
     h4 Email: #{user.email}
     h3 Posts by You: 
     each post in posts
-      .accountTile
+      .tile
           a(href="/users/#{post.user_id}/posts/#{post.id}")
             h3 #{post.title}
          

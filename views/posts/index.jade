@@ -1,13 +1,13 @@
 extends ../layout
 
 block content
-  .col-sm-6.col-sm-offset-2.profileDiv
-    h1=user.alias
+  .container-fluid.body-content
+    h2=user.alias
     img(class="profilePhoto" src="#{user.photo}")
     
-    h3 See #{user.alias}'s posts
+    h2 See #{user.alias}'s posts
     each post in posts
-      .accountTile
+      .tile
         a(href="/users/#{post.user_id}/posts/#{post.id}") 
-          h3 #{post.title}
+          h2 #{post.title}
           

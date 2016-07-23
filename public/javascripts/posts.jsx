@@ -22,11 +22,9 @@ var Page = React.createClass({
         comments: res.comments,
         categories: res.categories,
       });
-      console.log(this.state.post)
     }).bind(this));
     $.getJSON('/account').then((function(user){
       this.setState({user: user.user});
-      console.log(this.state.user)
     }).bind(this));
   },
   componentDidMount: function componentDidMount(){
@@ -73,9 +71,9 @@ var Page = React.createClass({
     }.bind(this));
 if(this.state.user.id === this.state.post_author.id){
     return (
-      <div className="container">
-        <h2 className="lead"> Title: {this.state.post.title}</h2>
-        <div className="bodyDiv">
+      <div className="container-fluid body-content">
+        <h2 className="text-center"> Title: {this.state.post.title}</h2>
+
 
         <div className="ReactButton">
         <form class="deleteBtn" action={"/users/" + this.state.user.id + "/posts/" + this.state.post.id + "?_method=DELETE"} method="POST">
@@ -99,9 +97,8 @@ if(this.state.user.id === this.state.post_author.id){
               </div>
               <p className="postAuthor">Posted By {this.state.post_author.alias}</p>
             </div>
-
           </div>
-          <h4 className="lead">Comments: {this.state.comments.length}</h4>
+          <h2>Comments: {this.state.comments.length}</h2>
           <CommentInput
             post={this.state.post}
             commentValue={this.commentValue}
@@ -109,11 +106,10 @@ if(this.state.user.id === this.state.post_author.id){
           />
           {listComments}
         </div>
-      </div>
     )}
     else {
       return (
-        <div className="container">
+        <div className="container-fluid body-content">
           <h2 className="lead"> Title: {this.state.post.title}</h2>
           <div className="bodyDiv">
             <h4 className="lead"> Body:</h4>
@@ -150,7 +146,6 @@ var Comment = React.createClass({
     function createMarkup() { return {__html: content}; };
     if(this.props.user_id === this.props.current_user){
       return (
-
           <div
             className="commentBody"
           >
@@ -221,4 +216,4 @@ var CommentInput = React.createClass({
   }
 })
 
-ReactDOM.render(<Page />, document.getElementById('container'));
+ReactDOM.render(<Page />, document.getElementById('container-fluid'));

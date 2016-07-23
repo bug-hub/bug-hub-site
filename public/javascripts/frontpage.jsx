@@ -91,6 +91,7 @@ var Page = React.createClass({
       var listPosts = this.state.posts.map(function (v, i) {
          return (
             <div className="tile" key={i}>
+              <hr></hr>
                <Post
                   title={v.title}
                   alias={v.alias}
@@ -98,6 +99,7 @@ var Page = React.createClass({
                   post_id={v.post_id}
                   user_id={v.user_id}
                />
+               <hr></hr>
             </div>
           )
       });}
@@ -117,8 +119,8 @@ var Page = React.createClass({
         });
       }
       return (
-      <div className="container">
-         <h2>Welcome to Bug Hub</h2>
+      <div className="container-fluid body-content">
+         <h2>Welcome to the Bug-Hub Community</h2>
          <MenuBox
             searchFilter={this.searchFilter}
             categoryFilter={this.categoryFilter}
@@ -138,11 +140,11 @@ var Post = React.createClass({
             {this.props.title}
             </h3>
          </a>
-         <h5>Created by:&nbsp;
+         <h4>Created by:&nbsp;
             <a href={"/users/" + this.props.user_id + "/posts"}>
                {this.props.alias}
             </a>
-         </h5>
+         </h4>
       </div>
 	}
 });

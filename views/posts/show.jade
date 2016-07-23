@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  .container 
+  .container-fluid
     h2(class="lead") Title: #{post.title}
       a(href="/users/#{post.user_id}/posts/#{post.id}/edit" class="editBtn") 
         button(class="btn btn-primary btn-sm") Edit this Post

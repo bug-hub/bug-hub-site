@@ -1,20 +1,21 @@
 extends ../layout.jade
 
 block content
-  .col-sm-6.col-sm-offset-3.editProfileDiv
-    h1 Edit your account
+  .container-fluid.body-content
+    h2 Edit your account
     form(action="/account?_method=PUT", method="POST" id = 'accountUpdate')
-      h3(id="aliasDisplay") #{user.alias}
+      h2 #{user.alias}
       img(id="photoDisplay", src="#{user.photo}" class="profilePhoto")
       .inputGroup
-        h5 Name
-        input(class="form-control" id="aliasInput", type="text" name="user[alias]",  value=user.alias, autocomplete="off")
-        h5 Profile Photo
-        textarea(class="form-control" id="photoInput", type="text" name="user[photo]", autocomplete="off") #{user.photo}
+        label Name:
+        input(class="form-control", type="text" name="user[alias]",  value=user.alias, autocomplete="off")
+        label Image Photo Url:
+        textarea(class="form-control", type="text" name="user[photo]", autocomplete="off") #{user.photo}
         input(class="btn btn-sm btn-primary" type="submit" value="Submit" id="submit")
-    button(id="reset" class="btn btn-sm btn-danger") Reset Form
-    h4 Delete your account
+    form(action="javascript:void(0)")
+      input(class="btn btn-sm btn-danger reset" value="Reset Form") 
     form(action="/users/#{user.id}?_method=DELETE" method="POST" id="deleteAccount")
-      input(type="submit" value="X" class="btn btn-xs btn-danger")
+      label DEACTIVATE YOUR ACCOUNT
+      input(type="submit" value="X" class="btn btn-md btn-danger")
     script(type="text/javascript", src="/javascripts/accountEdit.js")
     

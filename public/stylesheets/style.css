@@ -3,6 +3,10 @@ h1, h2, h3, h4, h5, h6, p {
   color: #f7f7f7;
 }
 
+p {
+  font-weight: lighter;
+}
+
 .content {
   font-size: 18px;
 }
@@ -23,13 +27,6 @@ label {
   background-repeat: no-repeat;
 }
 
-.coverPhoto {
-  width: 100vw;
-  height: 100vh;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
-
 .errorDiv {
   border: 5px solid rgba(100,100,100,0.5);
   position: absolute;
@@ -40,65 +37,9 @@ label {
   color: black;
 }
 
-.headshot {
-  width: 150px;
-  height: 150px;
-  border-radius: 25px;
-  margin-left: 20%;
-  margin-right: 15%;
-}
-
-.logo {
-  width: 150px;
-  height: 150px;
-  border-radius: 25px;
-  margin-left: 20%;
-  margin-right: 15%;
-}
-
-.github {
-  width: 150px;
-  height: 150px;
-  border-radius: 25px;
-  margin-left: 18vw;
-}
-
-.headline {
-  text-align: center;
-  margin-bottom: 2.7vh;
-}
-
-#secondCover {
-  margin-top: 10vh;
-  background-color: rgba(118,183,0,0.6);
-}
-
-#thirdCover {
-  margin-top: 10vh;
-  background-color: rgba(150,150,0,0.3);
-}
-
-#fourthCover {
-  margin-top: 10vh;
-  background-color: rgba(118,200,0,0.3);
-}
-
-.tile {
-  border-top: 2px;
-  border-color: gray;
-  border-style: solid;
-  border-radius: 20px;
-  margin-bottom: 5px;
-  padding-left: 5vw;
-  width: 75vw;
-}
-
-.title {
-  width: 29.5vw;
-}
-
 .inputGroup{
-  margin: 20px 0;
+  font-size: 2em;
+  color: #f7f7f7;
 }
 
 .inputGroup input {
@@ -121,30 +62,15 @@ label {
   max-height: 45px;
 }
 
-#reset{
-  position:relative;
-  bottom: 50px;
-  left: 110px;
-  width: 100px;
-}
-
 #submit {
   width: 100px;
 }
 
-.google {
-  color: red;
-  margin: 0 15% 0 30%;
-}
 
 #button {
   position: absolute;
   top: 80vh;
   left: 45%;
-}
-
-.google:hover {
-  color: rgba(255, 51, 153, 1);
 }
 
 .menu {
@@ -167,23 +93,27 @@ label {
 }
 
 .commentDiv, .bodyBody {
-  margin: 0 auto;
-  background-color: rgba(100,25,200,0.1);
-  border-radius: 10px;
+  min-height: 25vh;
+  background: #8b9dc3;
   margin: 10px;
-  width: 70vw;
   height: auto;
   padding: 2vw;
 }
+
+#commentEdit {
+  margin-bottom: 10vh;
+}
+
+
 
 .commentBody {
   margin-left: 8vw;
 }
 
 .commentAuthor, .postAuthor {
-  color: rgba(255,50,102,1);
-  font-size: 15px;
-  font-family: "Times New Roman", Georgia, Serif;
+  color: #f7f7f7;
+  font-weight: lighter;
+  font-size: 1.2em;
   margin-left: 10px;
 }
 
@@ -221,12 +151,7 @@ label {
   max-height:40px;
 }
 
-.dropdown {
-  float: right;
-  position: fixed;
-  left: 75vw;
-  top: 15vh;
-}
+
 
 .caret {
   margin: 10px;
@@ -246,11 +171,7 @@ label {
   position: relative;
 }
 
-#deleteAccount{
-  position: relative;
-  left: 180px;
-  bottom: 29px;
-}
+
 
 .CodeMirror, .CodeMirror-scroll {
   max-height: 100px;
@@ -269,10 +190,7 @@ label {
   margin-bottom: 5px;
   padding-left: 3vw;
   }
-.usersDiv{
-  border: 2px solid black;
-  border-radius: 10px;
-}
+
 .ReactButton {
   float:right;
   margin: 2px;
@@ -300,7 +218,9 @@ li {
   margin-right: 2vw;
   text-decoration: none;
 }
-a {
+
+
+#navbar a, #navbar-inverse {
   font-size: 1.8em;
   text-decoration: none;
 }
@@ -442,3 +362,121 @@ img {
 
     }
   }
+
+.navbar-brand {
+  font-size: 2em;
+}
+.container-fluid, .body-content {
+  background: #3b5998;
+}
+
+#account-page, #create-post {
+  padding-top: 2%;
+  min-height: 100vh;
+}
+
+#account-page h3, #account-page h4, #account-page h1 {
+  font-weight: lighter;
+}
+
+.body-content {
+  padding-top: 2%;
+  min-height: 100vh;
+}
+
+.usersDiv {
+  background: #3b5998;
+}
+
+.tile {
+  margin-top: 1%;
+  background: #8b9dc3;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.tile h4, .tile h3, .body-content h2{
+  font-weight: lighter;
+}
+
+hr {
+  border-color: #8b9dc3;
+}
+
+.dropdown-menu {
+  background: #3b5998;
+  color: #f7f7f7;
+}
+
+label, .checkbox label, td {
+  font-weight: lighter;
+}
+
+.dropdown {
+  float: right;
+  position: fixed;
+  right: 0;
+  top: 15vh;
+}
+
+.editor-toolbar, .editor-statusbar, .categoryDropdown {
+  background: #f7f7f7;
+}
+
+.title-container, .categoryDropdown {
+  text-align: center;
+  font-size: 1.5em;
+}
+.title-container label {
+  font-size: 2em;
+  color: #fff;
+}
+
+.title { 
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.btn-primary {
+  background: #8b9dc3;
+  border-color: #8b9dc3;
+  float: right;
+  display: block;
+}
+
+#nav li:hover {
+  background-color: #8b9dc3;
+}
+
+th {
+  width: 100%;
+  font-size: 2em;
+  color: #f7f7f7;
+  font-weight: lighter;
+}
+
+td {
+  font-size: 1.5em;
+}
+
+
+#deleteAccount{
+  font-size: 2em;
+  color: #f7f7f7;
+}
+
+.btn-danger {
+  margin-left: 2%;
+}
+
+.reset {
+  margin: 0;
+}
+
+.body-content img {
+  min-width: 100px;
+  min-height: 100px;
+  max-height: 5%;
+  margin-right: 2%;
+  max-width: 30%;
+}
