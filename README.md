@@ -1,35 +1,37 @@
-# g22 Project - Collaborators: Chris Chang, Kyle Peacock, Nic Higuera, Sara Jay.
+#BUG-HUB
 
-# This repository will serve as the official repository for our project.
+Bug-hub is a centralize place for developers to debug their issues and ask help from others.
 
-Please fork this repository and then clone it into your local computer.
-Once you are ready to push onto github, push your commit onto your own git repository and submit a pull request.
 
-When your code is accepted, the moderator will merge your code into the master branch.
-The moderator will make sure the code won't break the project.
+#Why BUG-HUB?
 
-### Testing / setup Instructions:
-+ git clone and npm install
-+ `createdb stack_app`
-+ `createdb stack_app-test`
-+ `knex migrate:latest`
-+ `knex migrate:latest`
-+ `knex migrate:latest --env test`
-+  Test command: mocha
+At Galvanize Inc, our team members decided to create BUG-HUB because many of the students keep on having the same problems but did not have a place to log their problems and issues.
 
-### Kyle's Git Workflow
 
-If you have made changes:
-+ `git add .`
-+ `git commit -m ""`
-+ `git pull upstream master`
+#Installation
 
-Handle any merge conflicts on your own side computer
+Fork and Clone the repository and run:
 
-+ `git push origin master`
+```
+$ npm install
+```
 
-Initiate a pull request on GitHub.
+#Technologies: 
 
-Then, 
-+ npm install
-+ knex migrate:latest && knex migrate:latest --env test
+We utilize the followings technologies:
+<ul>
+	<li> React.js </li>
+	<li> Jade </li>
+	<li> Express.js </li>
+	<li> Passport.js </li>
+	<li> PostgreSQL </li>
+	<li> Knex.js </li>
+</ul>
+
+#Contributors
+<ul>
+  <li><a href="https://github.com/chrischang">Chris Chang</a></li>
+  <li><a href="https://github.com/krpeacock">Kyle Peacock</a></li>
+  <li><a href="https://github.com/sarabpj">Sara Jay</a></li>
+  <li><a href="https://github.com/massiv64">Nic Higuera</a></li>
+</ul>
